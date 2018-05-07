@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <_name>SVG Packer</_name>
+    <id>ru.exponenta.svg_packer</id>
+
+    <dependency type="executable" location="extensions">packer.py</dependency>
+    <dependency type="executable" location="extensions">inkex.py</dependency>
+
+    <param name="from_directory" type="string" gui-text="Get files from:">/</param>
+    <param name="to_directory" type="string" gui-text="Save to:">/</param>
+    <param name="name" type="string" gui-text="File name:">/</param>
+    <param name="create_json" type="boolean" gui-text="Create spritesheet file">true</param>
+    <param name="recursive" type="boolean" gui-text="Include subfolder">true</param>
+    <param name="padings" type="int" min="0" max="20" gui-text="Padings">4</param>
+    
+    <!--<param name="normalize" type="boolean" gui-text="Normalize size">true</param>-->
+    
+    <!-- effects exchange both input and output messages -->
+    <effect>
+		<object-type>all</object-type>
+		<effects-menu>
+			<submenu _name="Pack spritesheet"/>
+		</effects-menu>
+	</effect>
+
+    <script>
+        <command reldir="extensions" interpreter="python">packer.py</command>
+    </script>
+</inkscape-extension>
